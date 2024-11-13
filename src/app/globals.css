@@ -3,19 +3,71 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --primary-100:#FF6F00;
+  --primary-200:#dc5200;
+  --primary-300:#8d0000;
+  --primary-uhh:#752706;
+  --accent-100:#16bfed;
+  --accent-200:#00618a;
+  --text-100:#FFFFFF;
+  --text-200:#e0e0e0;
+  --bg-100:#1A1A1A;
+  --bg-200:#292929;
+  --bg-300:#404040;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  background: var(--bg-100);
+  color: var(--text-100);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: var(--bg-100);
+    --foreground: var(--text-100);
+    --card:0 0% 3.9%;
+    --card-foreground:0 0% 98%;
+    --popover:0 0% 3.9%;
+    --popover-foreground:0 0% 98%;
+    --primary: var(--primary-100);
+    --primary-foreground: var(--primary-300);
+    --secondary:0 0% 14.9%;
+    --secondary-foreground:0 0% 98%;
+    --muted:0 0% 14.9%;
+    --muted-foreground:0 0% 63.9%;
+    --accent: var(--accent-100);
+    --accent-foreground: var(--accent-300);
+    --destructive:0 62.8% 30.6%;
+    --destructive-foreground:0 0% 98%;
+    --border:0 0% 14.9%;
+    --input:0 0% 14.9%;
+    --ring:0 0% 83.1%;
+    --chart-1:220 70% 50%;
+    --chart-2:160 60% 45%;
+    --chart-3:30 80% 55%;
+    --chart-4:280 65% 60%;
+    --chart-5:340 75% 55%;
+  }
+}
+
+.trail-letter {
+  position: absolute;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--accent-100);
+  opacity: 1;
+  animation: fadeUp 1s ease forwards;
+  pointer-events: none;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(-10px + 20 * random()), -30px);
+  }
 }

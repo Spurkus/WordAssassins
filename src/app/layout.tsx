@@ -13,7 +13,7 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang="en">
-      <body className="mx-auto flex max-h-screen w-[90%] md:w-[70%]">
+      <body className="mx-auto flex h-screen max-h-screen w-[90%] md:w-[70%]">
         {children}
       </body>
     </html>
